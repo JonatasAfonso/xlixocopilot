@@ -1,0 +1,19 @@
+<main>
+  <h1>{{ title }}</h1>
+  <p class="subtitle">Uma webapp simples para organizar receitas do dia a dia.</p>
+
+  <section class="recipes">
+    @for (recipe of recipes; track recipe.name) {
+      <article class="recipe-card">
+        <h2>{{ recipe.name }}</h2>
+        <p><strong>Preparo:</strong> {{ recipe.prepTime }}</p>
+        <h3>Ingredientes</h3>
+        <ul>
+          @for (ingredient of recipe.ingredients; track ingredient) {
+            <li>{{ ingredient }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </section>
+</main>
